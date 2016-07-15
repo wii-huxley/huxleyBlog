@@ -32,3 +32,41 @@ tags:
 		*	`File mask(s)`
 	*	`Result options`
 		*	`Open in new tab`
+
+### 自定义 Live Template ###
+
+创建Toast方法（自带的）
+
+*	进入活动模板界面：File -> Settings -> Editor -> Live Templates
+*	点击加号选择 `Template Group` ，输入活动模块的分组的名称 `Wii`，选中 `Wii` 再点击加号选择 `Live Template` ，输入要创建的活动模块名 `Toast` 。
+
+		Toast.makeText($className$.this, "$text$", Toast.LENGTH_SHORT).show();
+
+### 自定义 File Template ###
+
+创建单例class（自带饿汉）
+
+*	进入活动模板界面：File -> Settings -> Editor -> File and Code Templates
+*	点击加号 ，输入模板名称 `WiiSingleton` 。
+
+		#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+		#parse("File Header.java")
+		public class ${NAME}{
+
+		    private static ${NAME} instance;
+
+		    private ${NAME}() {}
+
+		    public static ${NAME} getInstance() {
+		        if(instance == null){
+		            synchronized (${NAME}.class) {
+		                if (instance == null) {
+		                    instance = new ${NAME}();
+		                }
+		            }
+		        }
+		        return instance;
+		    }
+		}
+
+> PS：可以创建一些 `activity` 的模板
