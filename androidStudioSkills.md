@@ -70,3 +70,8 @@ tags:
 		}
 
 > PS：可以创建一些 `activity` 的模板
+
+### 疑难杂症 ###
+
+1.	无法连接到手机，报错 ： error running app unable to obtain debug bridge  
+*解决办法*：Tools -> Android -> Enable ADB Integration，取消勾选
